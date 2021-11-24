@@ -37,6 +37,9 @@ message (STATUS "CMAKE_BUILD_TYPE ...................... " ${CMAKE_BUILD_TYPE})
 # remove file with exported developer targets to force its regeneration
 file(REMOVE "${CMAKE_BINARY_DIR}/targets_developer.cmake")
 
+# Install catkin package.xml
+install(FILES package.xml DESTINATION share/openvino)
+
 add_subdirectory(src)
 
 if(ENABLE_TESTS)
